@@ -5,6 +5,18 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoCert", "src\AutoCert\AutoCert.csproj", "{CF4300F9-6444-46B2-B683-A2E99DFAB55B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCert.ACME", "AutoCert.ACME\AutoCert.ACME.csproj", "{61ACF825-5290-473A-AEDA-8CBA9ED69078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCert.CloudServ", "AutoCert.CloudServ\AutoCert.CloudServ.csproj", "{59CBFE81-0289-4468-AFC4-CD2744D629EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCert.CloudServ.Aliyun", "AutoCert.CloudServ.Aliyun\AutoCert.CloudServ.Aliyun.csproj", "{B3E83FA1-27DD-4817-B635-062C90064C80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{8E47703B-6631-4927-BDF8-2E065E4B793E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{061028CC-73DC-4239-AF13-75B31E634DB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{7C759DC0-541E-47F1-8FDA-0000483B7001}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,30 @@ Global
 		{CF4300F9-6444-46B2-B683-A2E99DFAB55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF4300F9-6444-46B2-B683-A2E99DFAB55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF4300F9-6444-46B2-B683-A2E99DFAB55B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61ACF825-5290-473A-AEDA-8CBA9ED69078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61ACF825-5290-473A-AEDA-8CBA9ED69078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61ACF825-5290-473A-AEDA-8CBA9ED69078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61ACF825-5290-473A-AEDA-8CBA9ED69078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59CBFE81-0289-4468-AFC4-CD2744D629EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59CBFE81-0289-4468-AFC4-CD2744D629EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59CBFE81-0289-4468-AFC4-CD2744D629EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59CBFE81-0289-4468-AFC4-CD2744D629EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3E83FA1-27DD-4817-B635-062C90064C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3E83FA1-27DD-4817-B635-062C90064C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E83FA1-27DD-4817-B635-062C90064C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E83FA1-27DD-4817-B635-062C90064C80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E47703B-6631-4927-BDF8-2E065E4B793E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E47703B-6631-4927-BDF8-2E065E4B793E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E47703B-6631-4927-BDF8-2E065E4B793E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E47703B-6631-4927-BDF8-2E065E4B793E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{061028CC-73DC-4239-AF13-75B31E634DB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{061028CC-73DC-4239-AF13-75B31E634DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{061028CC-73DC-4239-AF13-75B31E634DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{061028CC-73DC-4239-AF13-75B31E634DB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C759DC0-541E-47F1-8FDA-0000483B7001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C759DC0-541E-47F1-8FDA-0000483B7001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C759DC0-541E-47F1-8FDA-0000483B7001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C759DC0-541E-47F1-8FDA-0000483B7001}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
