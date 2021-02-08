@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AutoCert.CloudServ.Aliyun
 {
@@ -34,17 +35,46 @@ namespace AutoCert.CloudServ.Aliyun
         }
 
         /// <summary>
+        /// 根据Host拆分DomainName与RR
+        /// </summary>
+        /// <param name="Host"></param>
+        /// <returns></returns>
+        private (string DomainName, string RR) SplitDomainName(string Host)
+        {
+            var Host_Array = Host.Split('.');
+
+            var RR = string.Empty;
+
+            if (Host_Array == null && Host_Array.Length < 2)
+            {
+                return (string.Empty, string.Empty);
+            }
+
+            var DomainName = $@"{Host_Array[^2]}.{Host_Array[^1]}";
+
+            if (Host_Array.Length > 2)
+            {
+                RR += string.Join(".", Host_Array.Take(Host_Array.Length - 2));
+            }
+
+            return (DomainName, RR);
+        }
+
+        /// <summary>
         /// 查询是否存在_acme-challenge的TXT记录
         /// </summary>
-        public bool IsExist(string DomainName, out IEnumerable<string> RecordIDs)
+        /// <param name="Host"></param>
+        /// <param name="RecordIDs"></param>
+        /// <returns></returns>
+        public bool IsExist(string Host, out IEnumerable<string> RecordIDs)
         {
-            var request = new DescribeDomainRecordsRequest();
-            request.DomainName = "hniot.com";
-            request.RRKeyWord = "_acme-challenge";
-            request.Type = "TXT";
-
             try
             {
+                var request = new DescribeDomainRecordsRequest();
+                (request.DomainName, request.RRKeyWord) = SplitDomainName(Host);
+                request.RRKeyWord = $@"_acme-challenge{(string.IsNullOrEmpty(request.RRKeyWord) ? request.RRKeyWord : $@".{request.RRKeyWord}")}";
+                request.Type = "TXT";
+
                 var response = SDK_Helper.CreateClient(this.AccessKeyId, this.AccessKeySecret).GetAcsResponse(request);
                 if (response != null && response.TotalCount > 0)
                 {
@@ -69,18 +99,19 @@ namespace AutoCert.CloudServ.Aliyun
         /// 添加DNS记录
         /// </summary>
         /// <param name="DomainName"></param>
+        /// <param name="RRWord"></param>
         /// <param name="Value"></param>
         /// <returns></returns>
-        public bool AddDNS(string DomainName, string Value)
+        public bool AddDNS(string Host, string Value)
         {
-            var request = new AddDomainRecordRequest();
-            request.DomainName = DomainName;
-            request.RR = "_acme-challenge";
-            request.Type = "TXT";
-            request._Value = Value;
-
             try
             {
+                var request = new AddDomainRecordRequest();
+                (request.DomainName, request.RR) = SplitDomainName(Host);
+                request.RR = $@"_acme-challenge{(string.IsNullOrEmpty(request.RR) ? request.RR : $@".{request.RR}")}";
+                request.Type = "TXT";
+                request._Value = Value;
+
                 var response = SDK_Helper.CreateClient(this.AccessKeyId, this.AccessKeySecret).GetAcsResponse(request);
                 if (response != null && !string.IsNullOrEmpty(response.RecordId) && !string.IsNullOrEmpty(response.RequestId))
                 {
@@ -133,18 +164,19 @@ namespace AutoCert.CloudServ.Aliyun
         /// 更新DNS记录
         /// </summary>
         /// <param name="RecordID"></param>
+        /// <param name="RRWord"></param>
         /// <param name="Value"></param>
         /// <returns></returns>
-        public bool UpdateDNS(string RecordID, string Value)
+        public bool UpdateDNS(string RecordID, string Host, string Value)
         {
-            var request = new UpdateDomainRecordRequest();
-            request.RecordId = RecordID;
-            request.RR = "_acme-challenge";
-            request.Type = "TXT";
-            request._Value = Value;
-
             try
             {
+                var request = new UpdateDomainRecordRequest();
+                (_, request.RR) = SplitDomainName(Host);
+                request.RR = $@"_acme-challenge{(string.IsNullOrEmpty(request.RR) ? request.RR : $@".{request.RR}")}";
+                request.Type = "TXT";
+                request._Value = Value;
+
                 var response = SDK_Helper.CreateClient(this.AccessKeyId, this.AccessKeySecret).GetAcsResponse(request);
                 if (response != null && response.RecordId == RecordID && !string.IsNullOrEmpty(response.RequestId))
                 {
