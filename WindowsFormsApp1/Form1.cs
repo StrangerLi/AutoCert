@@ -29,7 +29,6 @@ namespace WindowsFormsApp1
         {
         }
 
-        private StringBuilder Strb = new StringBuilder();
 
         /// <summary>
         /// 创建订单
@@ -39,7 +38,7 @@ namespace WindowsFormsApp1
         private async void button2_Click(object sender, EventArgs e)
         {
             var ACME = new AcmeContext(WellKnownServers.LetsEncryptStagingV2, KeyFactory.FromPem(this.textBox1.Text));
-            var Order = await ACME.NewOrder(new[] { "*.your.domain.name" });
+            var Order = await ACME.NewOrder(new[] { "hniot.com" });
 
             this.textBox2.Text = Order.Location.AbsoluteUri;
         }
@@ -53,6 +52,7 @@ namespace WindowsFormsApp1
         {
             var ACME = new AcmeContext(WellKnownServers.LetsEncryptStagingV2, KeyFactory.FromPem(this.textBox1.Text));
             var Order = ACME.Order(new Uri(this.textBox2.Text));
+            StringBuilder Strb = new StringBuilder();
 
             var authz = await Order.Authorizations();
             foreach (var item in authz)
@@ -121,10 +121,38 @@ namespace WindowsFormsApp1
             var ACME = new AcmeContext(WellKnownServers.LetsEncryptStagingV2, KeyFactory.FromPem(this.textBox1.Text));
             var Order = ACME.Order(new Uri(this.textBox2.Text));
 
-            var csr = new CertificationRequestBuilder(new KeyInfo());
-            //csr.
+            var bytes = System.IO.File.ReadAllBytes("./csr.pem");
 
-            //var cert = await Order.Generate(new CsrInfo { CountryName = "CA", State = "State", Locality = "City", Organization = "Dept", });
+            var cert = await Order.Finalize(bytes);
+            if (cert.Status == Certes.Acme.Resource.OrderStatus.Valid)
+            {
+                MessageBox.Show("成功");
+            }
+            var sss = await Order.Download();
+
+            this.textBox5.Text = sss?.ToPem();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void button7_Click(object sender, EventArgs e)
+        {
+            var ACME = new AcmeContext(WellKnownServers.LetsEncryptStagingV2, KeyFactory.FromPem(this.textBox1.Text));
+            var Orderctx = ACME.Order(new Uri(this.textBox2.Text));
+
+            var order = await Orderctx.Resource();
+
+            if (order.Status == Certes.Acme.Resource.OrderStatus.Valid)
+            {
+                MessageBox.Show("成功");
+            }
+            else
+            {
+                MessageBox.Show(@$"失败：{order.Status}");
+            }
         }
     }
 }
