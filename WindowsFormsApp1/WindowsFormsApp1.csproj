@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AutoCert.CloudServ.Aliyun\AutoCert.CloudServ.Aliyun.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="csr.pem">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

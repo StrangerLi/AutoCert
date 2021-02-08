@@ -3,19 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoCert", "src\AutoCert\AutoCert.csproj", "{CF4300F9-6444-46B2-B683-A2E99DFAB55B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{7C759DC0-541E-47F1-8FDA-0000483B7001}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCert.ACME", "AutoCert.ACME\AutoCert.ACME.csproj", "{61ACF825-5290-473A-AEDA-8CBA9ED69078}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6B466EB7-72B7-462B-BEF8-0B436664F275}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCert.CloudServ", "AutoCert.CloudServ\AutoCert.CloudServ.csproj", "{59CBFE81-0289-4468-AFC4-CD2744D629EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoCert", "src\AutoCert\AutoCert.csproj", "{E6D5CAA8-958B-4D47-AA35-DC6EC89C76B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCert.CloudServ.Aliyun", "AutoCert.CloudServ.Aliyun\AutoCert.CloudServ.Aliyun.csproj", "{B3E83FA1-27DD-4817-B635-062C90064C80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoCert.ACME", "src\AutoCert.ACME\AutoCert.ACME.csproj", "{6F8A7E88-2B23-444B-87A6-BAD7DEBFEB85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{8E47703B-6631-4927-BDF8-2E065E4B793E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoCert.CloudServ", "src\AutoCert.CloudServ\AutoCert.CloudServ.csproj", "{005FAD42-BA95-4B1C-9DD2-76CF26DC869B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{061028CC-73DC-4239-AF13-75B31E634DB0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{7C759DC0-541E-47F1-8FDA-0000483B7001}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoCert.CloudServ.Aliyun", "src\AutoCert.CloudServ.Aliyun\AutoCert.CloudServ.Aliyun.csproj", "{5266934F-E6A4-407E-910F-8CD4940E0316}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,37 +21,35 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CF4300F9-6444-46B2-B683-A2E99DFAB55B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF4300F9-6444-46B2-B683-A2E99DFAB55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF4300F9-6444-46B2-B683-A2E99DFAB55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF4300F9-6444-46B2-B683-A2E99DFAB55B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61ACF825-5290-473A-AEDA-8CBA9ED69078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61ACF825-5290-473A-AEDA-8CBA9ED69078}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61ACF825-5290-473A-AEDA-8CBA9ED69078}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61ACF825-5290-473A-AEDA-8CBA9ED69078}.Release|Any CPU.Build.0 = Release|Any CPU
-		{59CBFE81-0289-4468-AFC4-CD2744D629EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59CBFE81-0289-4468-AFC4-CD2744D629EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59CBFE81-0289-4468-AFC4-CD2744D629EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59CBFE81-0289-4468-AFC4-CD2744D629EA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3E83FA1-27DD-4817-B635-062C90064C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3E83FA1-27DD-4817-B635-062C90064C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3E83FA1-27DD-4817-B635-062C90064C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3E83FA1-27DD-4817-B635-062C90064C80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E47703B-6631-4927-BDF8-2E065E4B793E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E47703B-6631-4927-BDF8-2E065E4B793E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E47703B-6631-4927-BDF8-2E065E4B793E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E47703B-6631-4927-BDF8-2E065E4B793E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{061028CC-73DC-4239-AF13-75B31E634DB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{061028CC-73DC-4239-AF13-75B31E634DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{061028CC-73DC-4239-AF13-75B31E634DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{061028CC-73DC-4239-AF13-75B31E634DB0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7C759DC0-541E-47F1-8FDA-0000483B7001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7C759DC0-541E-47F1-8FDA-0000483B7001}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C759DC0-541E-47F1-8FDA-0000483B7001}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C759DC0-541E-47F1-8FDA-0000483B7001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6D5CAA8-958B-4D47-AA35-DC6EC89C76B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6D5CAA8-958B-4D47-AA35-DC6EC89C76B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6D5CAA8-958B-4D47-AA35-DC6EC89C76B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6D5CAA8-958B-4D47-AA35-DC6EC89C76B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8A7E88-2B23-444B-87A6-BAD7DEBFEB85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8A7E88-2B23-444B-87A6-BAD7DEBFEB85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8A7E88-2B23-444B-87A6-BAD7DEBFEB85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8A7E88-2B23-444B-87A6-BAD7DEBFEB85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{005FAD42-BA95-4B1C-9DD2-76CF26DC869B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{005FAD42-BA95-4B1C-9DD2-76CF26DC869B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{005FAD42-BA95-4B1C-9DD2-76CF26DC869B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{005FAD42-BA95-4B1C-9DD2-76CF26DC869B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5266934F-E6A4-407E-910F-8CD4940E0316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5266934F-E6A4-407E-910F-8CD4940E0316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5266934F-E6A4-407E-910F-8CD4940E0316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5266934F-E6A4-407E-910F-8CD4940E0316}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E6D5CAA8-958B-4D47-AA35-DC6EC89C76B3} = {6B466EB7-72B7-462B-BEF8-0B436664F275}
+		{6F8A7E88-2B23-444B-87A6-BAD7DEBFEB85} = {6B466EB7-72B7-462B-BEF8-0B436664F275}
+		{005FAD42-BA95-4B1C-9DD2-76CF26DC869B} = {6B466EB7-72B7-462B-BEF8-0B436664F275}
+		{5266934F-E6A4-407E-910F-8CD4940E0316} = {6B466EB7-72B7-462B-BEF8-0B436664F275}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C3658A67-86B7-4535-B2B5-6DCBBB57D22B}
