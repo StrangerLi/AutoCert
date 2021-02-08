@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using AutoCert.CloudServ.Aliyun;
 
 namespace WindowsFormsApp1
 {
@@ -16,10 +15,15 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.textBox1.Text = "-----BEGIN EC PRIVATE KEY-----\r\nMHcCAQEEICkjuNTOa73CMj97AppMQthGjQ3gvRieean+cEdpEqM1oAoGCCqGSM49\r\nAwEHoUQDQgAEs13ieNqQR2bJGQsodwgLbupF2qvKIXwSkSJ4QoST4mN3FXS4J8Qi\r\n2Fq4TM8C3DZe8o1gqfwNDPWpChOvhxAhTg==\r\n-----END EC PRIVATE KEY-----";
-            this.textBox2.Text = @$"https://acme-staging-v02.api.letsencrypt.org/acme/order/17957387/236133581";
+            this.textBox2.Text = $@"https://acme-staging-v02.api.letsencrypt.org/acme/order/17957387/236133581";
         }
 
         private DNS_Helper aliyun { get; set; } = new DNS_Helper("LTAI4GJzMP5NyfC3CTuWtY46", "rh6z4NdBsZXJit3b539nyiThEACIG4");
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+        }
+
 
         /// <summary>
         /// 创建订单
@@ -29,9 +33,18 @@ namespace WindowsFormsApp1
         private async void button2_Click(object sender, EventArgs e)
         {
             var ACME = new AcmeContext(WellKnownServers.LetsEncryptStagingV2, KeyFactory.FromPem(this.textBox1.Text));
-            var Order = await ACME.NewOrder(new[] { "hniot.com" ,"www.hniot.com"});
+            var Order = await ACME.NewOrder(new[] { "hniot.com", "www.hniot.com" });
 
             this.textBox2.Text = Order.Location.AbsoluteUri;
+        }
+
+        /// <summary>
+        /// 获取要修改的DNS记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void button4_Click(object sender, EventArgs e)
+        {
         }
 
         private async void button3_Click(object sender, EventArgs e)
@@ -100,7 +113,7 @@ namespace WindowsFormsApp1
                 var dd = await dnsChallenge.Validate();
                 if (dd.Status != Certes.Acme.Resource.ChallengeStatus.Valid)
                 {
-                    MessageBox.Show(@$"认证失败:{dd.Status}");
+                    MessageBox.Show($@"认证失败:{dd.Status}");
                 }
             }
 
@@ -142,38 +155,11 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show(@$"失败：{order.Status}");
+                MessageBox.Show($@"失败：{order.Status}");
             }
         }
 
-        
 
-    }
 
-    public static class sss
-    {
-        public static async Task<AcmeHttpResponse<T>> Post<T>(this IAcmeHttpClient client,
-IAcmeContext context,
-Uri location,
-object entity,
-bool ensureSuccessStatusCode)
-        {
-
-            var payload = await context.Sign(entity, location);
-            var response = await client.Post<T>(location, payload);
-            while (response.Error?.Status == System.Net.HttpStatusCode.BadRequest &&
-                response.Error.Type?.CompareTo("urn:ietf:params:acme:error:badNonce") == 0)
-            {
-                payload = await context.Sign(entity, location);
-                response = await client.Post<T>(location, payload);
-            }
-
-            if (ensureSuccessStatusCode && response.Error != null)
-            {
-
-            }
-
-            return response;
-        }
     }
 }
