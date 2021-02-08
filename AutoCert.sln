@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{7C759DC0-541E-47F1-8FDA-0000483B7001}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6B466EB7-72B7-462B-BEF8-0B436664F275}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoCert", "src\AutoCert\AutoCert.csproj", "{E6D5CAA8-958B-4D47-AA35-DC6EC89C76B3}"
@@ -15,16 +13,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoCert.CloudServ", "src\A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoCert.CloudServ.Aliyun", "src\AutoCert.CloudServ.Aliyun\AutoCert.CloudServ.Aliyun.csproj", "{5266934F-E6A4-407E-910F-8CD4940E0316}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{2B207D2C-E5CA-40B1-9293-2B821480FB45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsApp1", "demo\WindowsFormsApp1\WindowsFormsApp1.csproj", "{24E7AB81-AC2F-4E69-A23D-2125EF660492}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7C759DC0-541E-47F1-8FDA-0000483B7001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C759DC0-541E-47F1-8FDA-0000483B7001}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C759DC0-541E-47F1-8FDA-0000483B7001}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C759DC0-541E-47F1-8FDA-0000483B7001}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E6D5CAA8-958B-4D47-AA35-DC6EC89C76B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E6D5CAA8-958B-4D47-AA35-DC6EC89C76B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6D5CAA8-958B-4D47-AA35-DC6EC89C76B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +39,10 @@ Global
 		{5266934F-E6A4-407E-910F-8CD4940E0316}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5266934F-E6A4-407E-910F-8CD4940E0316}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5266934F-E6A4-407E-910F-8CD4940E0316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24E7AB81-AC2F-4E69-A23D-2125EF660492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E7AB81-AC2F-4E69-A23D-2125EF660492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E7AB81-AC2F-4E69-A23D-2125EF660492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E7AB81-AC2F-4E69-A23D-2125EF660492}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +52,7 @@ Global
 		{6F8A7E88-2B23-444B-87A6-BAD7DEBFEB85} = {6B466EB7-72B7-462B-BEF8-0B436664F275}
 		{005FAD42-BA95-4B1C-9DD2-76CF26DC869B} = {6B466EB7-72B7-462B-BEF8-0B436664F275}
 		{5266934F-E6A4-407E-910F-8CD4940E0316} = {6B466EB7-72B7-462B-BEF8-0B436664F275}
+		{24E7AB81-AC2F-4E69-A23D-2125EF660492} = {2B207D2C-E5CA-40B1-9293-2B821480FB45}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C3658A67-86B7-4535-B2B5-6DCBBB57D22B}
